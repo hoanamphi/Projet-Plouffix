@@ -1,0 +1,281 @@
+a001 Fibonacci and Golden ratio mix of numbers
+a002 Simple algebraic : a^b (* and +) c^d,a,b,c,d rationals
+a003 Combination of trig functions with Pi*a/b arguments.
+a004 Fibonacci and Golden ratio mix of numbers
+a005 Powers of sin and cos with Pi*a/b arguments.
+a006 Fibonacci and Golden ratio mix of numbers (3rd table)
+a007 Real Roots of polynomial with coefficients < 1000
+a008 Real Roots of simple polynomial with small coefficients
+a009 Simple surds, sums and products
+a010 Combination of roots of unity
+a011 Simple surds, 2nd version extended
+a012 Combination of roots of unity
+a013 Combination of roots of unity and simple rationals, sums and products
+a014 Simple surds, square roots and rationals
+a015 Real roots of polynomials with coefficients (0, 1, -1)
+a016 Simple surds extended
+a017 Simple surds extended
+a018 Simple surds extended
+a019 a^(p/q), a integer, p/q simple rationals
+a020 Real Roots of polynomials 
+b001 Base constants
+b002 Madelung Constants
+c001 Numbers of the form : a! * 2^b * Pi^c
+d001 Digits of known constants extended precision
+d002 Vertical values of logs and sqrt in base 10
+d003 Vertical values of sums with polynomials base 10
+d004 Vertical values of a*n+b in base 10
+d005 Vertical values of sums with polynomials base 10
+d006 Digits of sqrt(2) in base 10 and vertical values of simple polynomials
+d007 Digits of Zeta(3) extended
+d008 Digits of Catalan constant extended
+d009 Digits of Euler constant 0.57721566 extended
+d010 Digits of exp(1) or E extended
+d011 Digits of Pi extended
+d012 Digits of the Golden Ratio extended
+d013 Digits of log(2) extended
+d014 Digits of log(3) extended
+d015 Digits of sqrt(5) extended
+d016 Digits of sqrt(3) extended
+d017 Digits of exp(Pi) extended
+d018 Digits of log(10 extended
+d019 Left diagonal in digits of Fibonacci numbers
+d020 Rigit diagonal in powers of 2 base 10
+d021 Left diagonal in powers of 3 base 10
+d022 Right and Left diagonal in powers of 11 base 10
+d023 Left diagonal of powers of 5 base 10
+d024 Left diagonal of powers of 7 base 10
+d025 Right diagonal of powers of 5 base 10
+d026 Right diagonal in binomial(2*n,n)
+d027 Right diagonal in binomial(2*n,n)+1
+d028 Right diagonal in binomial(2*n,n)-1
+d029 Right diagonal in n^k, various k
+d030 Right diagonal in n^12
+d031 Right diagonal in n^3 starting
+d032 Right diagonal in Fibonacci[n]
+d033 Right diagonal in binomial(2*n+1,n)
+d034 Right diagonal in A000041 (partitions of an integer)
+d035 Reverse value of Fibonacci(n)
+d036 Reverse value of 5^n
+d037 Reverse value of 2^n
+d038 Reverse value of binomial(n,k)
+d039 Reverse value of a^b
+d040 Reverse value of Lucas Numbers
+d041 Reverse value of 2^n - k
+d042 Reverse value of binomial(2n,n)/(n+1)
+d043 Back and Forth of decimal expansion of Sqrt[2] extended
+d044 Back and Forth of decimal expansion of Pi extended
+d045 Back and Forth of EulerGamma constant
+d046 Back and Forth of the Golden Ratio extended
+d047 Back and Forth of Zeta[3] extended
+d048 Back and Forth of Exp[1] or E extended
+d049 Back and Forth of Log[2] extended
+d050 Reverse value of A000041(n) or the numbers of partitions of an integer
+d051 Reverse value of n!
+d052 Reverse value of 1*3*5*7...up to n
+d053 Reverse value of log(10)*2^n
+d054 Reverse value of log(10)*5^n
+d055 Values of Log10(Binomial[a,b]]
+d056 Reverve value of {Log10[a^b]}, fractional part
+d060 Digits of n! at various positions
+d061 Digits of A000041(n) at various positions
+d062 Digits of A000023(n) at various positions
+d063 Digits of A000110(n) at various positions
+d064 Digits of A000364(n) at various positions
+d065 Digits of A000182(n) at various positions
+d066 Digits of A000984(n) at various positions
+d067 Digits of A000266(n) at various positions
+d072 Digits of the concatenated seq A000068(n) 
+d073 Digits of the concatenated binomial(n,k)
+d074 Digits of a^n concatenated
+d075 Vertical value of simple algebraic numbers
+d076 Reverse value of a*2^n
+d077 Vertical value of phi*n, Golden ratio
+d078 Reverse value of high factorials (n!)
+e001 Values of Elliptic functions at rational arguments
+e002 Values of Elliptic functions at rational arguments
+e003 Values of Jacobi Elliptic functions at rational arguments
+e004 Values of Jacobi Theta functions at rational arguments
+e005 Ratios of Elliptic Theta functions with rational arguments.
+e006 Ratios of Jacobi Theta functions at rational arguments
+f001 Generalized Hypergeometric functions with rational arguments
+g001 Values of the GAMMA and Psi functions with rational arguments
+g002 Sums of the Digamma or Psi function with rational arguments
+g003 Values of the GAMMA function with complex arguments
+g004 Values of the GAMMA function with complex arguments
+g005 Ratios of values of the GAMMA function, rational arguments
+g006 Sums of Psi(1,a/b) values, a/b rational
+g007 Sums of Psi(2,a/b) values, a/b rational
+g008 Stieltjes constants
+g009 Ratios of the GAMMA and incomplete GAMMA function with rational arguments
+g010 Values of the incomplete GAMMA function with rational arguments
+h001 Ratios of the exponential function with rational arguments
+h002 Simple exponentials exp(a/b +/i c/d)
+h003 Exponential of Pi * simple algebraic numbers
+h005 exp(cos(Pi*b/b)/cos(Pi*c/d)), with sin also
+h007 exp(a^(p/q))-b^(r/s)), a,b,r,s,p,q integers
+h008 exp(a^(p/q))+b^(r/s)), a,b,r,s,p,q integers
+h009 exp(arctan(a/b))
+h010 exp(cos(Pi*a/b)/cos(Pi*c/d)) with sin also
+h011 exp(Pi*(cos(Pi*a/b)-cos(Pi*c/d))) with sin also
+h012 exp(LerchPhi(a,b,c) a,b,c rationals
+h013 exp(sqrt(a)), a algebraic
+h014 Harmonic series extended
+h015 Exp(a^(p/q))
+h016 exp(Pi*(a^(p/q)))
+h017 exp(sum((floor(n*a/b)+floor(n*c/d)+floor(n*e/f))/2^n,n=1..infinity))
+h018 exp(Real Root of n'th Bernoulli polynomial)
+h019 exp(Pi*(Real Root of n'th Bernoulli polynomial))
+h020 exp(Real Root of n'th Euler polynomial)
+h021 exp(Pi*(Real Root of n'th Euler polynomial))
+h022 exp(Real Root of Hermite n'th polynomial)
+h023 exp(Pi*(Real Root of Hermite n'th polynomial))
+h024 exp(Pi*(Real Root of polynomials))
+h025 exp(Pi*(Real Root of polynomials))
+h027 exp(Hypergeometric function with rationals)
+h028 exp(Hypergeometric function with rationals)
+h029 exp(Various algebraics)
+h030 exp(Various algebraics)
+h031 exp(erf and erfc functions with rationals and Pi)
+h032 exp, exp(Pi) and log mixed
+j001 Bessel functions
+k001 Champernowne numbers
+k002 Champernowne numbers
+k003 Champernowne numbers
+l001 Hyperbolic, sinh, cosh and tanh
+l002 Zeta function at integers, Ei and polylogs
+l003 Zeta function, Kelvin and higher functions at rational arguments
+l004 Sinh, Cosh and Tanh
+l005 Sech, Ln(Tanh) and other logarithmic functions
+l006 Log of rationals
+l007 1+frac(log(n))
+l008 1+frac(log(n)/log(2))
+l031 log of various algebraic numbers
+m001 Mixed constants with 4 operations
+m002 Mixed constants with Lambert W function (ProductLog)
+m003 Mixed logs, algebraic and exponential function
+m004 Mixed logs, algebraic and exponential function
+m005 Mixed expressions with Pi, gamma and Zeta(3)
+m006 Mixed expressions with Exp(Pi), Pi, log(Pi)
+m007 Mixed expressions with Psi(a/b)
+m008 Mixed expressions with Pi and powers of Pi
+m009 Mixed expressions with Pi and Psi(1,a/b)
+m010 Mixed expressions with Pi and Psi(2,a/b)
+m011 Mixed expressions with Zeta(n)
+m012 Mixed expressions with exp(a/b)
+m013 Mixed expressions with Pi and log(n)
+m014 Mixed expressions with Bessel function
+m015 Mixed expressions with Polylogs
+m016 Mixed expressions with Polylogs
+m017 Mixed expressions with Pi and powers of Pi
+m018 Mixed expressions with Pi and powers of 2
+m019 Mixed expressions with gamma and powers of gamma
+m020 Mixed expressions with Pi, exp(Pi)
+m021 Mixed expressions with Pi, exp(1), gamma
+m022 Mixed expressions with the GAMMA function
+n001 Constants and powers of base constants
+n002 n^(a/b)
+n004 n^(a/b)
+n005 Large integers 
+p001 Polylogarithm series
+p002 log(algebraic numbers)
+p003 LerchPhi function with rational arguments
+p004 log(rationals)
+q001 Simple rationals
+q002 Sum of inverse of primes
+q003 Fractional part of Bernoulli Numbers
+r001 Iterates of 2*x^2-1, starting at a rational
+r002 Iterates of z^2 + c, c complex
+r004 Real and Imaginary part of z^2+c with various arguments
+r005 Iterates of z^2 + c, c complex
+r006 Logistic map of x(n)=rx(n)(1-x(n)) with x(0) = rational
+r007 Sum of inverses of recurrences
+r008 Continued fractions generalized
+r009 Iterates of z^3+c, c complex
+s001 OEIS database with various bases
+s002 OEIS database with various bases
+s003 Concatenated sequences of the OEIS
+s005 General base expansion of the OEIS database
+t001 Various Number theoretic functions, phi and sigma
+v001 Sum of Inverse of polynomial with Integer coefficients
+v002 Sum(1/(b^n(+/*)P(n))),n=1..infinity), P(n) polynomial
+v003 sum(P(n)/(exp(Pi*n)-1),n=1..infinity), P(n) polynomial
+v004 sum(P(n))/sinh(Pi*n),n=1..infinity), P(n) polynomial
+v005 sum(P(n))/(exp(2*Pi*n)-1),n=1..infinity), P(n) polynomial
+v006 sum(P(n))/binomial(2*n,n),n=1..infinity), P(n) polynomial
+v007 sum(P(n))/fibonacci(n),n=1..infinity), P(n) polynomial
+v008 sum(1/(fibonacci(n)+P(n)),n=1..infinity), P(n) polynomial
+v009 sum((P(n))/binomial(3*n,n),n=1..infinity), P(n) polynomial
+v010 sum(1/P(n))*binomial(3*n,n)),n=1..infinity), P(n) polynomial
+v011 sum(1/(P(n))+binomial(3*n,n)),n=1..infinity), P(n) polynomial
+v012 product(1-(P(n))/binomial(2*n,n),n=1..infinity), P(n) polynomial
+v013 sum((-1)^(n+1)/2^n/(P(n)),n=1..infinity), P(n) polynomial
+v014 sum(1/(n^n+P(n)),n=1..infinity), P(n) polynomial
+v015 sum(1/binomial(2*n,n)/(P(n)),n=1..infinity), P(n) polynomial
+v016 sum(1/(n!+P(n)),n=1..infinity), P(n) polynomial
+v017 sum(1/(a^n+b^n-c^n),n=1..infinity)
+v018 sum(P(n))/binomial(2*n,n),n=1..infinity)
+v019 sum(1/((n!+1)*(P(n)),n=1..infinity)
+v020 sum(1/(10^n+P(n)),n=1..infinity)
+v021 sum(1/binomial(2*n,n+1)/(P(n)),n=1..infinity)
+v022 sum(P(n)/(exp(Pi*n)+1),n=1..infinity)
+v023 sum(P(n)/(sinh(Pi*n)+1),n=1..infinity)
+v024 Sum[1/(P(n)),{n,1,Infinity}]
+v025 sum(fibonacci(n)/binomial(3*n,n)/(P(n)),n=1..infinity)
+v026 sum(1/((n+a/b)*(n+c/d)*(n+e/f)*b^n),n=0..infinity)
+v027 sum(1/((n+a/b)*(n+c/d)*(n+e/f)*binomial(4*n,n)),n=0..infinity)
+v028 sum(1/((n+a/b)*(n+c/d)*(n+e/f)*binomial(2*n,n)*2^n),n=0..infinity)
+v029 sum(1/(1/n!*10^n/(n-a/b)/(n-c/d)/(n-e/f)/(n-g/h)/(n-i/j)),n=0..infinity)
+v030 sum(1/((-1)^(n+1)*binomial(3*n,n)*(n+a/b)*(n+c/d)*(n+e/f)*(n+g/h)),n=0..infinity)
+V031 Sum((-1)^(an+b)/(cn+d)^(1/24),n=0..infinity)
+v032 sum(P(n))/(exp(Pi*n)-1),n=1..infinity)
+w001 Airy functions
+w002 Zeros of Bessel and Airy functions
+w003 Bessel, Weber and Anger function
+w004 Fresnel functions
+w005 Hermite and cylindrical functions
+w006 Weierstrass functions
+w007 Solutions of transcendental equations
+w008 Zeros of Airy functions
+w009 Zeros of Airy functions
+w010 Zeros of Bessel functions
+w011 Zeros of Bessel functions
+w012 Solutions of transcendental equations
+y006 Partitions of integers, A000041
+z001 Zeta function with rational arguments
+z002 Zeta function with complex arguments
+z003 Ratios of Zeta function
+z004 Zeros of Riemann Zeta function
+z005 diff. and sum  of n_th zeros of Zeta(s)
+z006 Ratios of zeros of Zeta(s)
+z007 Simple expression with 3 first zeros of Zeta(s)
+z008 Simple expression with 3 first zeros of Zeta(s)
+z009 n_th zero of Zeta(s),Im(s) mod Pi
+z010 n_th zero of Zeta(s),Im(s) mod 1
+z011 sum(Zn/Annnnnn[k],k=1..infinity),Zn=n_th zero of Riemann Zeta Function, Annnnnn from the OEIS
+z012 n_th zero of Riemann Zeta/n
+z013 Ratios and sums of Zeta function
+z014 Sums of fractional part of Zeta Zeros
+z015 Module of the n'th Zeta Zero (Riemann)
+z016 Zeta values near zeros
+z017 Expressions with Zeta, GAMMA and Pi
+z018 Re(exp(Zn)), Zn= n'th zero of Riemann Zeta
+z019 Pi^n, Bernoulli and factorials, 2^m
+z020 Pi, log(n) and Zeta Zeros
+z021 Zeta Zeros sums: sum(a(n)*Zn,n=1..16), first zeros
+z022 1/Pi*argument(Zeta(1/2+n*I))
+z023 1/Pi*argument(Zeta(1/2+n*I))
+z024 1/Pi*argument(GAMMA(1/4+I*n/2))
+z025 frac(1/8*(-4*n*ln(2)-4*n*ln(Pi)+4*n*ln(n)+11*Pi-4*n)/Pi)-1/2
+z026 (PrimePi[n]-RiemannR[n]+1/Log[n]-1/Pi*ArcTan[Pi/Log[n]])*Log[n]/Sqrt[n]
+z027 Pi, log(Pi), log(2), exp(1) mixed
+z028 N'th zero of Riemann function using LambertW function
+z029 N'th zero of Riemann approximation
+z030 frac(n/log(n))
+z031 frac(n*Pi/log(n))
+z032 frac(n*log(log(n))/Pi)
+z033 frac(a^n*Pi))
+z034 frac(a^n/Pi))
+z035 frac(n*log(log(log(n))))
+z036 frac(n*log(log(log(n)))/Pi)
+z037 frac(n/LambertW(n))
