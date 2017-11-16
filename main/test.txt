@@ -1,1 +1,0 @@
-Petit test d'intégration git dans phpstorm
