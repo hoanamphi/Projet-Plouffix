@@ -5,7 +5,7 @@ require_once('../view/lookup.php');
       if(isset($_GET['num'])) {
           $num = $_GET['num'];
           //fait le test pour savoir si la string contient autre chose que des 0.xxx, .xxx ou xxx
-          if (preg_match('/0|\.|\d{6,}/', $num)) {
+          if (preg_match('/0?(\.|,)?\d{6,41}/', $num)) {
                 $pattern = array();
                 $pattern[0] = '/\d*?\.|,/';
                 $replacement = array();
