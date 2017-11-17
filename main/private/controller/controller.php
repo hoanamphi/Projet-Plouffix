@@ -5,14 +5,14 @@ require_once('../view/lookup.php');
       if(isset($_GET['num'])) {
           $num = $_GET['num'];
           //fait le test pour savoir si la string contient autre chose que des 0.xxx, .xxx ou xxx
-          if (preg_match('/0|\.|\d*?/', $num)) {
-            $pattern = array();
-            $pattern[0] = '/\d*?\.|,/';
-            $replacement = array();
-            $replacement[0] = '';
-            //moyens de simplifier en virant des variables ici
-            $num = preg_replace($pattern, $replacement, $num);
-            return $num;
+          if (preg_match('/0|\.|\d{6,}/', $num)) {
+                $pattern = array();
+                $pattern[0] = '/\d*?\.|,/';
+                $replacement = array();
+                $replacement[0] = '';
+                //moyens de simplifier en virant des variables ici
+                $num = preg_replace($pattern, $replacement, $num);
+                return $num;
           } else {
             //appelle à la fonction qui affiche le message d'erreur
             return false;
