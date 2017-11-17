@@ -12,12 +12,14 @@
       <input type="submit">
     </form>
     <?php
-      function affichageNum() {
+    require_once('../controller/controller.php');
 
+      function affichageNum($num) {
+        echo $num;
       }
 
       function affichageErrorMsg() {
-
+        echo "error";
       }
      ?>
 </body>

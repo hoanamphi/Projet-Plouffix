@@ -1,4 +1,5 @@
 <?php
+require_once('../view/lookup.php');
 //Formalise la string ressu et renvoit une string formalisé (contient uniquement des int, sans virgule) ou renvoit un message d'erreur sur la view
   function inputFormatisation(){
       if(isset($_GET['num'])) {
@@ -11,7 +12,7 @@
             $replacement[0] = '';
             //moyens de simplifier en virant des variables ici
             $num = preg_replace($pattern, $replacement, $num);
-            $num = shell_exec('look ' . $num . ' list.txt');
+            $num = shell_exec('look '. $num .' list.txt');
             return $num;
           } else {
             //appelle à la fonction qui affiche le message d'erreur
