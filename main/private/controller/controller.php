@@ -12,7 +12,6 @@ require_once('../view/lookup.php');
             $replacement[0] = '';
             //moyens de simplifier en virant des variables ici
             $num = preg_replace($pattern, $replacement, $num);
-            $num = shell_exec('look '. $num .' list.txt');
             return $num;
           } else {
             //appelle à la fonction qui affiche le message d'erreur
@@ -21,17 +20,21 @@ require_once('../view/lookup.php');
       } else {
           //ne fait rien puisque l'utilisateur n'a encore rien rentré
           return null;
-        }
       }
+  }
 
     //recherche le numéro dans le txt donné par rechercheRepertoire
     function rechercheNum() {
+
+        // $num = shell_exec('look '. $num .' list.txt');
 
     }
 
     //recherche le reperdoire dans le quel se trouve le txt contenant le numéro donné par inputFormatisation
     function rechercheRepertoire() {
+        // fait appel à input formatisation ????
 
+        // $num = shell_exec('look '. $num .' list.txt');
     }
 
     // retourne le résultat trouvé par rechercheNum, sinon soit ne fait rien, soit renvoit un message d'erreur si la chaîne est vraiment non formlisable
