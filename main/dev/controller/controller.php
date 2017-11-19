@@ -1,13 +1,10 @@
 <?php
 require_once('../view/lookup.php');
 
-$entree = $_GET['num'];
-
 //Formalise la string reçue et renvoit une string formalisé (contient uniquement des int, sans virgule) ou renvoit un message d'erreur sur la view
     function inputFormatisation(){
-        global $entree;
-
-        if(isset($entree)) {
+        if(isset($_GET["num"])) {
+            $entree = $_GET["num"];
             //fait le test pour savoir si la string contient autre chose que des 0.xxx, .xxx ou xxx
             if (preg_match('/0?(\.|,)?\d{6,41}/', $entree)) {
                 $pattern = array();
