@@ -1,5 +1,5 @@
 <?php
 
-require '../dev/start.php';
+require '../dev/bootstrap.php';
 
 $app->run();

@@ -29,7 +29,7 @@ $ php composer require slim/views
 require 'vendor/autoload.php';
 
 $app = new \Slim\Slim(array(
-    'view' => new \Slim\Views\Smarty()
+    'views' => new \Slim\Views\Smarty()
 ));
 ```
 
@@ -51,7 +51,7 @@ $view->parserCacheDirectory = dirname(__FILE__) . '/cache';
 require 'vendor/autoload.php';
 
 $app = new \Slim\Slim(array(
-    'view' => new \Slim\Views\Twig()
+    'views' => new \Slim\Views\Twig()
 ));
 ```
 

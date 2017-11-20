@@ -1,0 +1,12 @@
+{% extends "modules/layout.twig" %}
+
+{% block title %}Lookup{% endblock %}
+
+{% block body %}
+<h1>Inverter de Plouffe {{ id }}</h1>
+<form action="../controller/controller.php" method="get">
+    <label>Entrez un nombre</label>
+    <input type="text" name="num"/>
+    <button type="submit">SUBMIT</button>
+</form>
+{% endblock %}
