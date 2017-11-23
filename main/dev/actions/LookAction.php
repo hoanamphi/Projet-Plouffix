@@ -1,10 +1,14 @@
 <?php
 namespace Dev\Actions;
 
+use Dev\Model;
+
 class LookAction {
 
-    public function afficher() {
-        return "test du controler";
+    private $model;
+
+    public function __construct() {
+        $this->model = new Model\ModelLook();
     }
 
     public function inputFormatisation($num){
@@ -19,11 +23,10 @@ class LookAction {
             }
     }
 
-    public function isNumber(string $str): bool{
-        return is_numeric($str);
+    public function returnData($num) {
+        $path = $this->model->findFile($num);
+        $data = $this->model->findResult($path, $num);
+        return $data;
     }
 
-    public function strToFloat(string $str): float{
-        return ($str+0);
-    }
 }
