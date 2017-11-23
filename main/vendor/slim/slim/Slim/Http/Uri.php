@@ -526,7 +526,7 @@ class Uri implements UriInterface
      * Normally, the empty path "" and absolute path "/" are considered equal as
      * defined in RFC 7230 Section 2.7.3. But this method MUST NOT automatically
      * do this normalization because in contexts with a trimmed base path, e.g.
-     * the front controller, this difference becomes significant. It's the task
+     * the front actions, this difference becomes significant. It's the task
      * of the user to handle both "" and "/".
      *
      * The value returned MUST be percent-encoded, but MUST NOT double-encode

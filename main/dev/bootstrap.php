@@ -1,19 +1,16 @@
 <?php
-//defini la root de base qui et celle du repertoire courrant
 define('INC_ROOT', dirname(__DIR__));
 
-//dis a slim de display les erreurs
 ini_set('display_errors', 'On');
 
-//require toutes les dependances en occurance twig views et slim
 require INC_ROOT.'/vendor/autoload.php';
 
+use Dev\Actions\LookAction;
 use Slim\Http\Response;
 use Slim\App;
 use Slim\Http\Request;
 use Slim\Views\Twig;
 
-//Slim utilise des namespace pour éviter les conflits
 $app = new App([
     'view' => new Twig(INC_ROOT . "/dev/views/"),
     'template.path' => INC_ROOT . '/dev/views',
@@ -22,13 +19,25 @@ $app = new App([
     ]
 ]);
 
-$app->get('/', function(Request $rq, Response $res, array $args) use ($app){
-    echo 'this is a test';
-    return $this->view->render($res, 'view.php');
-});
+$app->get('/', function(Request $req, Response $res){
+//    $this->flash->addMessage("error", "This is a message");
+    return $this->view->render($res, "view.twig");
+})->setName("home");
 
-$app->get("/{id}", function(Request $rq, Response $res, array $args){
-    return $this->view->render($res, "lookup.twig", [
-        "id" => $args["id"]
-    ]);
-});
+$app->get("/look", function(Request $req, Response $res){
+    return $this->view->render($res, "lookup.twig");
+})->setName("look");
+
+$app->post("/look", function(Request $req, Response $res){
+    $post = $req->getParsedBody();
+    //TODO: Traiter les données du formulaires
+    $numParam = $post["num"];
+    $action = new LookAction();
+    $numParam = $action->inputFormatisation($numParam);
+    //TODO: Rediriger vers la page correspondante
+    return $this->view->render($res, "lookup.twig", array(
+        'num' => $numParam
+    ));
+})->setName("look.post");
+
+$app->get("/display/{num}", function(Request $rq, Response $res, array $args){});

@@ -1,0 +1,14 @@
+{% block flashBlock %}
+    {% if flash.failure %}
+        <div class="flash flash-folded failure">
+            <p>{{ flash.failure }}</p>
+            <button class="flash-close">&#x2716;</button>
+        </div>
+    {% endif %}
+    {% if flash.success %}
+        <div class="flash flash-folded success">
+            <p>{{ flash.success }}</p>
+            <button class="flash-close">&#x2716;</button>
+        </div>
+    {% endif %}
+{% endblock %}
