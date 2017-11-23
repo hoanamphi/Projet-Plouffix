@@ -9,7 +9,7 @@ class ModelLook {
     }
 
     public function findResult($path, $num) {
-        return system('look '.$num.' '.$path);
+        return shell_exec('look '.$num.' '.$path);
     }
 
 }
