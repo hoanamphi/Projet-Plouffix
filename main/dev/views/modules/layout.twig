@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, height=device-height, shrink-to-fit=no"/>
+        <title>{% block title %}{% endblock %}</title>
+
+
+        {% block stylesheets %}
+        {% endblock %}
+
+
+        {% block scripts %}
+        {% endblock %}
+    </head>
+
+    <body>
+        {% include "modules/flash.twig" with {"flash": flash} %}
+        {% block body %}
+            {% block datalist %}
+            <ul>
+                {% block dataList_content %}
+                {% endblock %}
+            </ul>
+            {% endblock %}
+        {% endblock %}
+    </body>
+</html>
