@@ -9,7 +9,9 @@
     <input type="text" name="num" autocomplete="off"/>
     <button type="submit">SUBMIT</button>
 </form>
-    {% block datalist %}
-        {{ data }}
-    {% endblock %}
+        <ul>
+        {% for line in data %}
+            <li>{{ item.caption }}</li>
+        {% endfor %}
+        </ul>
 {% endblock %}
