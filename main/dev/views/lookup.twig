@@ -9,9 +9,5 @@
     <input type="text" name="num" autocomplete="off"/>
     <button type="submit">SUBMIT</button>
 </form>
-        <ul>
-        {% for line in data %}
-            <li>{{ item.caption }}</li>
-        {% endfor %}
-        </ul>
+    {{ parent() }}
 {% endblock %}

@@ -35,7 +35,7 @@ $app->post("/look", function(Request $req, Response $res){
     $numParam = $post["num"];
     $action = new LookAction();
     $data = $action->returnData($numParam);
-
+    $data = explode("\n", $data);
     //TODO: Rediriger vers la page correspondante
     return $this->view->render($res, "lookup.twig", array(
         'data' =>$data

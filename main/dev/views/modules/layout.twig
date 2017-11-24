@@ -7,6 +7,7 @@
 
 
         {% block stylesheets %}
+            <link rel="stylesheet" type="text/css" href="../../../public/assets/css/index.css">
         {% endblock %}
 
 
@@ -17,7 +18,16 @@
     <body>
         {% include "modules/flash.twig" with {"flash": flash} %}
         {% block body %}
-
+        <div class="block">
+            <p>Patate</p>
+            {% block dataDisplay %}
+                <ul>
+                    {% for line in data %}
+                        <li>{{ line }}</li>
+                    {% endfor %}
+                </ul>
+            {% endblock %}
+        </div>
         {% endblock %}
     </body>
 </html>
