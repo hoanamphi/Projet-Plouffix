@@ -13,7 +13,7 @@ class LookAction {
 
     public function inputFormatisation($num){
             //fait le test pour savoir si la string contient autre chose que des 0.xxx, .xxx ou xxx
-            if (preg_match('/^(\d?(,|\.))(\d{6,41})$/', $num)) {
+            if (preg_match('/^(\d?(,|\.))?(\d{6,41})$/', $num)) {
                 //moyens de simplifier en virant des variables ici
                 $num = preg_replace('/\d*?(\.|,)/','', $num);
                 return $num;

@@ -19,6 +19,14 @@ $app = new App([
     ]
 ]);
 
+$container['view'] = function ($container) {
+    $view = new \Slim\Views\Twig(INC_ROOT . '/views');
+    $basePath = rtrim(str_ireplace('index.php', '', $container['request']->getUri()->getBasePath()), '/');
+    $view->addExtension(new Slim\Views\TwigExtension($container['router'], $basePath));
+
+    return $view;
+};
+
 $app->get('/', function(Request $req, Response $res){
 //    $this->flash->addMessage("error", "This is a message");
     return $this->view->render($res, "view.twig");
@@ -30,7 +38,6 @@ $app->get("/look", function(Request $req, Response $res){
 
 $app->post("/look", function(Request $req, Response $res){
     $post = $req->getParsedBody();
-
     //TODO: Traiter les données du formulaires
     $numParam = $post["num"];
     $action = new LookAction();
@@ -41,3 +48,7 @@ $app->post("/look", function(Request $req, Response $res){
         'data' =>$data
     ));
 })->setName("look.post");
+
+$app->get('/smartlookup', function(Request $req, Response $res){
+   return $this->view->render($res, "smartlookup.twig");
+})->setName("Slook");

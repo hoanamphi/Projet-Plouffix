@@ -1,13 +1,14 @@
 {% extends "modules/layout.twig" %}
 
-{% block title %}Lookup{% endblock %}
+{% block title %}LookUp{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
 
 {% block body %}
-<h1>Inverter de Plouffe</h1>
-<form action="" method="POST">
-    <label>Entrez un nombre</label>
-    <input type="text" name="num" autocomplete="off"/>
-    <button type="submit">SUBMIT</button>
-</form>
+
+<h1>LookUp</h1>
     {{ parent() }}
+
 {% endblock %}
