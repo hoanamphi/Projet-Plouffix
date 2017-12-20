@@ -3,30 +3,38 @@
     <head>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, height=device-height, shrink-to-fit=no"/>
-        <link rel="stylesheet" type="text/css" href="assets/css/index.css">
         <title>{% block title %}{% endblock %}</title>
 
 
         {% block stylesheets %}
-
+            <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+            <link rel="stylesheet" type="text/css" href="assets/css/index.css">
+            <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     {% endblock %}
 
 
         {% block scripts %}
-            <script src="jquery.js"></script>
-        {% endblock %}
+            <script rel="script" src="assets/js/jquery-3.2.1.min.js"></script>
+            <script rel="script" src="assets/js/jq-flash/flash.js"></script>
+    {% endblock %}
     </head>
 
     <body>
+    {% if flash.failure %}
+        <div class="flash  flash-folded flash-failure">
+            <p>{{ flash.failure }}</p>
+            <button class="flash-close materialShadow">&#x2716;</button>
+        </div>
+    {% endif %}
         <header>
         {% include "modules/flash.twig" with {"flash": flash} %}
         {% block body %}
 
             {% block navBar %}
             <div class="nav-bar">
-                    <a href="{{ path_for('home') }}">liens vers la page d'acceuil</a>
-                    <a href="{{ path_for('look') }}">liens vers le look simple</a>
-                    <a href="/smartlookup">liens vers le look simple</a>
+                    <a href="/">liens vers la page d'acceuil</a>
+                    <a href="look">liens vers le look simple</a>
+                    <a href="smartlookup">liens vers le smart lookup</a>
             </div>
         {% endblock %}
         </header>
@@ -43,7 +51,10 @@
                 <button type="submit">SUBMIT</button>
             </form>
             </div>
+
         {% endblock %}
+
+
 
         <div class="block">
                 <ul>

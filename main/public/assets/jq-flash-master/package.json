@@ -1,0 +1,30 @@
+{
+  "name": "jq-flash",
+  "version": "1.0.2",
+  "description": "A lightweight jQuery plugin for stylish flash messages",
+  "main": "dist/flash.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+      "type": "git",
+      "url": "git+https://github.com/Voltra/jq-flash.git"
+  },
+  "keywords": [
+    "jquery",
+    "javascript",
+    "flash",
+    "message",
+    "ecosystem:jquery",
+    "jquery-plugin"
+  ],
+  "author": "Voltra",
+  "license": "MIT",
+  "bugs": {
+      "url": "https://github.com/Voltra/jq-flash/issues"
+  },
+  "homepage": "https://github.com/Voltra/jq-flash#readme",
+  "dependencies": {
+    "jquery": "~3.2.1"
+  }
+}

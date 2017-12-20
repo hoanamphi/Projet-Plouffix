@@ -6,6 +6,12 @@ header {
     text-align: center;
 }
 
+header h1 {
+    padding: 3vh 0 3vh 0;
+    font-size: 8vh;
+    font-weight: 100;
+}
+
 .nav-bar {
     display: inline-block;
 }
@@ -20,6 +26,18 @@ header {
     text-align: center;
     margin: 2vh 0 2vh 0;
     font-size: 2vh;
+}
+
+.formNum input {
+    width: 12vw;
+    height: 3vh;
+    font-size: 4vh;
+}
+
+.formNum button {
+    width: 8vw;
+    height: 3vh;
+    font-size: 100%;
 }
 
 .block {

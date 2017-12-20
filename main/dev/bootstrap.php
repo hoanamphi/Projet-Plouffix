@@ -11,6 +11,8 @@ use Slim\App;
 use Slim\Http\Request;
 use Slim\Views\Twig;
 
+ini_set('memory_limit', '1000M');
+
 $app = new App([
     'view' => new Twig(INC_ROOT . "/dev/views/"),
     'template.path' => INC_ROOT . '/dev/views',
@@ -42,7 +44,7 @@ $app->post("/look", function(Request $req, Response $res){
     $numParam = $post["num"];
     $action = new LookAction();
     $data = $action->returnData($numParam);
-    $data = explode("\n", $data);
+
     //TODO: Rediriger vers la page correspondante
     return $this->view->render($res, "lookup.twig", array(
         'data' =>$data
@@ -52,3 +54,17 @@ $app->post("/look", function(Request $req, Response $res){
 $app->get('/smartlookup', function(Request $req, Response $res){
    return $this->view->render($res, "smartlookup.twig");
 })->setName("Slook");
+
+$app->post('/smartlookup', function(Request $req, Response $res){
+    $post = $req->getParsedBody();
+    //TODO: Traiter les données du formulaires
+    $numParam = $post["num"];
+    $action = new LookAction();
+    $data = $action->returnData($numParam);
+//    $data = explode('\n', $data);
+
+    //TODO: Rediriger vers la page correspondante
+    return $this->view->render($res, "smartlookup.twig", array(
+        'data' =>$data
+    ));
+})->setName('Slook.post');

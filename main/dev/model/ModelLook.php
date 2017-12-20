@@ -8,14 +8,13 @@ class ModelLook {
         return $path;
     }
 
-    public function findResult($path, $num) {
+    public function findResult($num) {
+        $path = $this->findFile($num);
         if(file_exists($path)) {
-            $open = fopen($path, "r");
-            $data = fread($open, filesize($path));
-            fclose($open);
+            $data = file($path) or die("could not open the file");
             return $data;
         }
-        return "erreur le fichier n'est pas disponible";
+        return false;
     }
 
 }
