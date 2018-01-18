@@ -1,72 +1,65 @@
 body {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    vertical-align: baseline;
-    line-height: 1;
     background: #ecf0f1;
-    display: flex;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -ms-flex-align: center;
-    align-items: center;
     height: 100vh;
+    text-align: center;
 }
 
 h1 {
     margin: 0;
     padding: 0;
-    border: 0;
-    vertical-align: baseline;
-    margin-top: -300px;
-    text-align: center;
-    font: 900 70px/80px 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    letter-spacing: -2px;
+    display: block;
+    position: relative;
+    font: 900 6vw 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    letter-spacing: -0.08vw;
     color: #34495E;
-    position: absolute;
 }
 
 form {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    vertical-align: baseline;
+    display: block;
+    position: relative;
     text-align: center;
 }
 
 #search {
-    vertical-align: baseline;
-    border: 3px solid #1abc9c;
-    margin: 6px;
-    border-radius: 5px;
-    height: 38px;
-    width: 500px;
-    padding: 6px 6px 6px 12px;
-    font-size: 20px;
+    border: 0.15vw solid #1abc9c;
+    margin: 0 0 1vh 0;
+    border-radius: 0.4vw;
+    height: 6vh;
+    width: 24vw;
+    padding: 0 0 0 1vw;
+    font-size: 2.25vh;
     color: #1abc9c;
 }
 
 select {
-    vertical-align: baseline;
-    border: 3px solid #1abc9c;
-    border-radius: 5px;
-    height: 56px;
+    border: 0.15vw solid #1abc9c;
+    margin: 0 0 1vh 0;
+    border-radius: 0.4vw;
+    height: 6.60vh;
+    width: 16vw;
+    padding: 0 0 0 1vw;
+    font-size: 2.25vh;
     color: #1abc9c;
-    padding: 6px 6px 6px 12px;
-    margin: 6px;
-    width: 340px;
-    font-size: 18px;
 }
 
 .submit {
-    margin: 0;
-    padding: 0;
-    vertical-align: baseline;
-    height: 56px;
-    width: 200px;
-    background-color: #1abc9c;
+    text-align: center;
     border: none;
-    border-radius: 6px;
-    font-size: 20px;
+    margin: 0 0 1vh 0;
+    border-radius:  0.4vw;
+    height: 6.60vh;
+    width: 8vw;
+    font-size: 1.25vw;
+    background-color: #1abc9c;
     color: white;
+}
+
+.block {
+    margin: 0 0 0 21vw;
+    font-size: 1vw;
+}
+
+.block ul {
+    list-style-type: circle;
+    text-align: left;
 }
