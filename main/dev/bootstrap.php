@@ -29,16 +29,34 @@ $container['view'] = function ($container) {
     return $view;
 };
 
-$app->get('/', function(Request $req, Response $res){
+/*$app->get('/', function(Request $req, Response $res){
 //    $this->flash->addMessage("error", "This is a message");
     return $this->view->render($res, "view.twig");
+})->setName("home");*/
+
+$app->get('/', function(Request $req, Response $res){
+//    $this->flash->addMessage("error", "This is a message");
+    return $this->view->render($res, "lookup.twig");
 })->setName("home");
 
-$app->get("/look", function(Request $req, Response $res){
+/*$app->get("/look", function(Request $req, Response $res){
     return $this->view->render($res, "lookup.twig");
-})->setName("look");
+})->setName("look");*/
 
-$app->post("/look", function(Request $req, Response $res){
+$app->post("/", function(Request $req, Response $res){
+    $post = $req->getParsedBody();
+    //TODO: Traiter les données du formulaires
+    $numParam = $post["num"];
+    $action = new LookAction();
+    $data = $action->returnData($numParam);
+
+    //TODO: Rediriger vers la page correspondante
+    return $this->view->render($res, "lookup.twig", array(
+        'data' =>$data
+    ));
+})->setName("look.post");
+
+/*$app->post("/look", function(Request $req, Response $res){
     $post = $req->getParsedBody();
     //TODO: Traiter les données du formulaires
     $numParam = $post["num"];
@@ -67,4 +85,4 @@ $app->post('/smartlookup', function(Request $req, Response $res){
     return $this->view->render($res, "smartlookup.twig", array(
         'data' =>$data
     ));
-})->setName('Slook.post');
+})->setName('Slook.post');*/
