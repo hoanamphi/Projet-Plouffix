@@ -25,11 +25,9 @@ class LookAction {
     public function returnData($num) {
         $num = $this->inputFormatisation($num);
         if ($num != false) {
-            exec("look ".$num." ".$this->model->findFile($num), $data);
-
-            /*$data = $this->model->findResult($num);
+            $data = $this->model->findResult($num);
             $higIndex = count($data)-1;
-            $data = $this->binary_search($data, $num, 0, $higIndex, 0);*/
+            $data = $this->binary_search($data, $num, 0, $higIndex, 0);
             return $data;
         }
         return "false";
