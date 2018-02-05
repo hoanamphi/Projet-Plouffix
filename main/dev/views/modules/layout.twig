@@ -45,21 +45,22 @@
                         <option value="smart" selected>Smart</option>
                     </select>
                     {#<input class="submit" type="submit">#}
-                    <input type="submit" value="submit" class="submit">
+                    <input type="button" value="submit" class="submit">
                 </form>
             </div>
 
         {% endblock %}
 
-
-
-        <div class="block">
-                <ul>
+            <table>
                     {% for line in data %}
-                        <li>{{ line }}</li>
+                <tr>
+                    <td>{{ line[0] }}</td>
+                    <td>{{ line[1] }}</td>
+                    <td>{{ line[2] }}</td>
+                </tr>
                     {% endfor %}
-                 </ul>
-        </div>
+            </table>
+
     {% endblock %}
 
     {% endblock %}

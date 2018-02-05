@@ -63,19 +63,27 @@ select {
     color: white;
 }
 
-.block {
-    margin-left:21vw;
-    font-size: 1vw;
+body table {	
+	font-size: 2vh;
+	margin-left: 7vw;
+	width: 90vw;
+	background-color: #27ae60;
+	border-radius: 2vh;
 }
 
-.block ul {
-    text-align: left;
+body table tr td {
+	padding: 0.5vh 1vw;
 }
 
-.block ul li {
-    padding: 0.5vh 0;
+body table tr td:nth-child(1) {
+	
 }
 
-/*body > *{*/
-    /*margin-bottom:1vh;*/
-/*}*/
+body table tr td:nth-child(2) {
+	border-left: solid #6ade9b;
+	border-right: solid #6ade9b;
+}
+
+body table tr td:nth-child(3) {
+	
+}
