@@ -63,27 +63,35 @@ select {
     color: white;
 }
 
-body table {	
-	font-size: 2vh;
-	margin-left: 7vw;
+.border {
+	overflow-x: inherit;
+	position: relative;
+	z-index: 2;
+	display: block;	
 	width: 90vw;
-	background-color: #27ae60;
+	height: auto;
+	margin-left: 7vw;	
+	border: solid 1vh #6ade9b;
 	border-radius: 2vh;
 }
 
-body table tr td {
-	padding: 0.5vh 1vw;
+body table {
+	border: inherit;
+	overflow-x: inherit;	
+	z-index: 0;
+	font-size: 2vh;	
+	width: 89vw;	
+	background-color: #27ae60;	
 }
 
-body table tr td:nth-child(1) {
+body table tr td {
+	position: relative;	
+
+	
 	
 }
 
 body table tr td:nth-child(2) {
 	border-left: solid #6ade9b;
 	border-right: solid #6ade9b;
-}
-
-body table tr td:nth-child(3) {
-	
 }
