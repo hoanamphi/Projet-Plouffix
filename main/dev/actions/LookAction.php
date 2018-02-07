@@ -25,10 +25,10 @@ class LookAction {
     public function returnData($num) {
         $num = $this->inputFormatisation($num);
         if ($num != false) {
-            exec("look ".$num." ".$this->model->findFile($num), $data);
-            /*$data = $this->model->findResult($num);
+            $data = $this->model->findResult($num);
             $higIndex = count($data)-1;
-            $data = $this->binary_search($data, $num, 0, $higIndex, 0);*/
+            $data = $this->binary_search($data, $num, 0, $higIndex, 0);
+            //exec("look ".$numero." ".$fichier, $data);
             return $data;
         }
         return "false";
@@ -42,21 +42,10 @@ class LookAction {
         $lenNum = strlen($num);
 
         $midIndex = intdiv(($lowIndex + $higIndex), 2);
-
-//        $matches = [];
-//        preg_match('/\d{6,'.strlen($num).'}/', $data[$midIndex], $matches);
-//        $midVal = $matches[0];
-
-
-            $midVal = preg_replace('/0?(\.|,)/','', $data[$midIndex]);
-            $midVal = substr($midVal, 0, $lenNum);
+        $midVal = preg_replace('/0?(\.|,)/','', $data[$midIndex]);
+        $midVal = substr($midVal, 0, $lenNum);
 
         if ($midVal == $num) {
-//            preg_match('/\d{6,'.strlen($num).'}/',$data[$lowIndex], $matches);
-//            $lowVal = $matches[0];
-//            preg_match('/\d{6,'.strlen($num).'}/',$data[$higIndex], $matches);
-//            $higVal = $matches[0];
-
             $lowVal = preg_replace('/0?(\.|,)/','', $data[$lowIndex]);
             $lowVal = substr($lowVal, 0, $lenNum);
 
@@ -66,16 +55,11 @@ class LookAction {
             //permet de tonquer les valeurs non intéressantes du sous-tableau obtenus
             while ($lowVal != $num) {
                 $lowIndex++;
-//                preg_match('/\d{6,'.strlen($num).'}/',$data[$lowIndex], $matches);
-//                $lowVal = $matches[0];
                 $lowVal = preg_replace('/0?(\.|,)/','', $data[$lowIndex]);
                 $lowVal = substr($lowVal, 0, $lenNum);
             }
             //permet de tonquer les valeurs non intéressantes du sous-tableau obtenus
             while ($higVal != $num) {
-
-//                preg_match('/\d{6,'.strlen($num).'}/',$data[$higIndex], $matches);
-//                $higVal = $matches[0];
                 $higIndex--;
                 $higVal = preg_replace('/0?(\.|,)/','', $data[$higIndex]);
                 $higVal = substr($higVal, 0, $lenNum);
