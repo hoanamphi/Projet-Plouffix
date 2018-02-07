@@ -28,6 +28,7 @@ class LookAction {
             $data = $this->model->findResult($num);
             $higIndex = count($data)-1;
             $data = $this->binary_search($data, $num, 0, $higIndex, 0);
+            var_dump($data);
             //exec("look ".$numero." ".$fichier, $data);
             return $data;
         }
