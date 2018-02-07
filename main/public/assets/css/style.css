@@ -63,35 +63,25 @@ select {
     color: white;
 }
 
-.border {
-	overflow-x: inherit;
-	position: relative;
-	z-index: 2;
+.container {	
 	display: block;	
 	width: 90vw;
 	height: auto;
 	margin-left: 7vw;	
-	border: solid 1vh #6ade9b;
+	background-color: #adf5cc;
+	font-size: 2vh;
+	border: solid 0.5vh #6ade9b;
 	border-radius: 2vh;
-}
-
-body table {
-	border: inherit;
-	overflow-x: inherit;	
-	z-index: 0;
-	font-size: 2vh;	
-	width: 89vw;	
-	background-color: #27ae60;	
 }
 
 body table tr td {
 	position: relative;	
-
-	
-	
+	padding: 1vh 0.5vw;
 }
 
 body table tr td:nth-child(2) {
+	padding-left: 0.5vw;
+	padding-right: 0.5vw;
 	border-left: solid #6ade9b;
 	border-right: solid #6ade9b;
 }
