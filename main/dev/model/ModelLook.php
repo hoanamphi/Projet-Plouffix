@@ -4,6 +4,8 @@ namespace Dev\Model;
 class ModelLook {
 
     public function findFile($num) {
+        //Modifier la partie gauuche du chemin vers la zone contenant les fichiers
+        // ici, la partie droite avec les num étant faite our trouver le fichier a0000.txt
         $path =  INC_ROOT . "/dev/model/".$num[0]."/a".$num[0].$num[1].$num[2].$num[3].'.txt';
         return $path;
     }
@@ -15,6 +17,12 @@ class ModelLook {
             return $data;
         }
         return false;
+    }
+
+    public function look($num) {
+        $path = $this->findFile($num);
+        exec("look ".$num." ".$path, $data);
+        return $data;
     }
 
 }

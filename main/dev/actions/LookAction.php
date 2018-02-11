@@ -25,10 +25,10 @@ class LookAction {
     public function returnData($num) {
         $num = $this->inputFormatisation($num);
         if ($num != false) {
-            $data = $this->model->findResult($num);
-            $higIndex = count($data)-1;
-            $data = $this->binary_search($data, $num, 0, $higIndex, 0);
-            //exec("look ".$numero." ".$fichier, $data);
+//            $data = $this->model->findResult($num);
+//            $higIndex = count($data)-1;
+//            $data = $this->binary_search($data, $num, 0, $higIndex, 0);
+            $data = $this->model->look($num);
             return $data;
         }
         return "false";
