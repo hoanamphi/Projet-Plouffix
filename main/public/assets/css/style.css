@@ -53,6 +53,7 @@ select {
 }
 
 .submit {
+	overflow-x: inherit;
     margin-bottom: 1vh;
     height: 6vh;
     width: 8vw;
@@ -64,24 +65,27 @@ select {
 }
 
 .container {	
-	display: block;	
-	width: 90vw;
-	height: auto;
-	margin-left: 7vw;	
+	width: auto;
 	background-color: #adf5cc;
 	font-size: 2vh;
 	border: solid 0.5vh #6ade9b;
 	border-radius: 2vh;
+	
+}
+
+body table tr {
+	
 }
 
 body table tr td {
-	position: relative;	
-	padding: 1vh 0.5vw;
+/*	padding: 1vh 0.5vw;*/
 }
 
 body table tr td:nth-child(2) {
+/*
 	padding-left: 0.5vw;
 	padding-right: 0.5vw;
+*/
 	border-left: solid #6ade9b;
 	border-right: solid #6ade9b;
 }
