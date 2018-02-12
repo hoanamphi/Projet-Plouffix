@@ -9,31 +9,20 @@
         {% block stylesheets %}
             <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
             <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+            <link rel="stylesheet" type="text/css" href="assets/js/jq-flash/flash.css">
             <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    {% endblock %}
+        {% endblock %}
 
 
         {% block scripts %}
             <script rel="script" src="assets/js/jquery-3.2.1.min.js"></script>
             <script rel="script" src="assets/js/jq-flash/flash.js"></script>
-    {% endblock %}
+        {% endblock %}
     </head>
 
+    {%  block body %}
     <body>
-    {% if flash.failure %}
-        <div class="flash  flash-folded flash-failure">
-            <p>{{ flash.failure }}</p>
-            <button class="flash-close materialShadow">&#x2716;</button>
-        </div>
-    {% endif %}
-        <header>
-        {% include "modules/flash.twig" with {"flash": flash} %}
-            {% block body %}
-        </header>
-
     {% block dataDisplay %}
-
-
 
         {% block numberForm %}
 
@@ -44,7 +33,6 @@
                         <option value="classic" selected>Classic</option>
                         <option value="smart" selected>Smart</option>
                     </select>
-                    {#<input class="submit" type="submit">#}
                     <input type="submit" value="submit" class="submit">
                 </form>
             </div>
@@ -52,23 +40,21 @@
         {% endblock %}
 
         {% if data != null %}
-        <div class="container">
-            <table>
-                <div>
-                        {% for line in data %}
-                    <tr>
-                        <td>{{ line[0] }}</td>
-                        <td>{{ line[1] }}</td>
-                        <td>{{ line[2] }}</td>
-                    </tr>
-                        {% endfor %}
-                </div>
-            </table>
-        </div>
+            <div class="container">
+                <table>
+                    <div>
+                            {% for line in data %}
+                        <tr>
+                            <td>{{ line[0] }}</td>
+                            <td>{{ line[1] }}</td>
+                            <td>{{ line[2] }}</td>
+                        </tr>
+                            {% endfor %}
+                    </div>
+                </table>
+            </div>
         {% endif %}
-
     {% endblock %}
-
     {% endblock %}
     </body>
 </html>

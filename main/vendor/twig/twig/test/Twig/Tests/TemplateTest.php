@@ -5,7 +5,7 @@
  *
  * (c) Fabien Potencier
  *
- * For the full copyright and license information, please views the LICENSE
+ * For the full copyright and license information, please Views the LICENSE
  * file that was distributed with this source code.
  */
 class Twig_Tests_TemplateTest extends \PHPUnit\Framework\TestCase

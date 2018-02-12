@@ -76,7 +76,7 @@ abstract class DispatcherTest extends \PHPUnit_Framework_TestCase {
 
     /**
      * @expectedException \FastRoute\BadRouteException
-     * @expectedExceptionMessage Cannot register two routes matching "/user/([^/]+)" for method "GET"
+     * @expectedExceptionMessage Cannot register two Routes matching "/user/([^/]+)" for method "GET"
      */
     public function testDuplicateVariableRoute() {
         \FastRoute\simpleDispatcher(function(RouteCollector $r) {
@@ -87,7 +87,7 @@ abstract class DispatcherTest extends \PHPUnit_Framework_TestCase {
 
     /**
      * @expectedException \FastRoute\BadRouteException
-     * @expectedExceptionMessage Cannot register two routes matching "/user" for method "GET"
+     * @expectedExceptionMessage Cannot register two Routes matching "/user" for method "GET"
      */
     public function testDuplicateStaticRoute() {
         \FastRoute\simpleDispatcher(function(RouteCollector $r) {
@@ -262,7 +262,7 @@ abstract class DispatcherTest extends \PHPUnit_Framework_TestCase {
 
         $cases[] = [$method, $uri, $callback, $handler, $argDict];
 
-        // 11 ---- More specified routes are not shadowed by less specific of another method ------>
+        // 11 ---- More specified Routes are not shadowed by less specific of another method ------>
 
         $callback = function(RouteCollector $r) {
             $r->addRoute('GET', '/user/{name}', 'handler0');
@@ -276,7 +276,7 @@ abstract class DispatcherTest extends \PHPUnit_Framework_TestCase {
 
         $cases[] = [$method, $uri, $callback, $handler, $argDict];
 
-        // 12 ---- Handler of more specific routes is used, if it occurs first -------------------->
+        // 12 ---- Handler of more specific Routes is used, if it occurs first -------------------->
 
         $callback = function(RouteCollector $r) {
             $r->addRoute('GET', '/user/{name}', 'handler0');

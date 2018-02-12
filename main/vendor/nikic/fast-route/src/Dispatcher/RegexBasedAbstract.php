@@ -38,7 +38,7 @@ abstract class RegexBasedAbstract implements Dispatcher {
             }
         }
 
-        // If nothing else matches, try fallback routes
+        // If nothing else matches, try fallback Routes
         if (isset($this->staticRouteMap['*'][$uri])) {
             $handler = $this->staticRouteMap['*'][$uri];
             return [self::FOUND, $handler, []];

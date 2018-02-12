@@ -29,7 +29,7 @@ class HackTypecheckerTest extends \PhpUnit_Framework_TestCase {
             );
             // Server already running - 3.10 => 3.11 regression:
             // https://github.com/facebook/hhvm/issues/6646
-            exec('hh_client stop 2>/dev/null');
+            exec('hh_client stop 2>/Dev/null');
             $this->testTypechecks(/* recurse = */ false);
             return;
 

@@ -53,7 +53,7 @@ abstract class RegexBasedAbstract implements DataGenerator {
 
         if (isset($this->staticRoutes[$httpMethod][$routeStr])) {
             throw new BadRouteException(sprintf(
-                'Cannot register two routes matching "%s" for method "%s"',
+                'Cannot register two Routes matching "%s" for method "%s"',
                 $routeStr, $httpMethod
             ));
         }
@@ -77,7 +77,7 @@ abstract class RegexBasedAbstract implements DataGenerator {
 
         if (isset($this->methodToRegexToRoutesMap[$httpMethod][$regex])) {
             throw new BadRouteException(sprintf(
-                'Cannot register two routes matching "%s" for method "%s"',
+                'Cannot register two Routes matching "%s" for method "%s"',
                 $regex, $httpMethod
             ));
         }

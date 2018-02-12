@@ -6,7 +6,7 @@
  * (c) Fabien Potencier
  * (c) Armin Ronacher
  *
- * For the full copyright and license information, please views the LICENSE
+ * For the full copyright and license information, please Views the LICENSE
  * file that was distributed with this source code.
  */
 abstract class Twig_Node_Expression_Unary extends Twig_Node_Expression

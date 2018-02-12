@@ -22,7 +22,7 @@ function all_options_cached(): \FastRoute\Dispatcher {
         'dataGenerator' => \FastRoute\DataGenerator\GroupCountBased::class,
         'dispatcher' => \FastRoute\Dispatcher\GroupCountBased::class,
         'routeCollector' => \FastRoute\RouteCollector::class,
-        'cacheFile' => '/dev/null',
+        'cacheFile' => '/Dev/null',
         'cacheDisabled' => false,
       ),
     );
