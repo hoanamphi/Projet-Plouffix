@@ -1,0 +1,11 @@
+{% if flash("success") %}
+    <div class="flash flash-folded flash-success">
+        <p>{{ flash("success") }}</p>
+        <button class="flash-close">&#x2716;</button>
+    </div>
+{% elseif flash("failure") %}
+    <div class="flash flash-folded flash-failure">
+        <p>{{ flash("failure") }}</p>
+        <button class="flash-close">&#x2716;</button>
+    </div>
+{% endif %}
