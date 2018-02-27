@@ -17,6 +17,7 @@
         {% block scripts %}
             <script rel="script" src="assets/js/jquery-3.2.1.min.js"></script>
             <script rel="script" src="assets/js/jq-flash/flash.js"></script>
+            <script rel="script" src="assets/js/main.js"></script>
         {% endblock %}
     </head>
 
@@ -41,17 +42,20 @@
 
         {% if data != null %}
             <div class="container">
-                <table>
-                    <div>
-                            {% for line in data %}
-                        <tr>
+            <table>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Table</th>
+                        <th>Signification</th>
+                    </tr>
+                {% for line in data %}
+                    <tr>
                             <td>{{ line[0] }}</td>
                             <td>{{ line[1] }}</td>
                             <td>{{ line[2] }}</td>
-                        </tr>
-                            {% endfor %}
-                    </div>
-                </table>
+                    </tr>
+                {% endfor %}
+            </table>
             </div>
         {% endif %}
     {% endblock %}

@@ -5,14 +5,14 @@ ini_set('display_errors', 'On');
 
 require INC_ROOT.'/vendor/autoload.php';
 
+ini_set('memory_limit', '4095M');
+
 //use Dev\Helpers\TwigExtensions\FlashExtension;
-use Dev\Actions\LookAction;
+use Dev\Action\LookAction;
 use Slim\Http\Response;
 use Slim\App;
 use Slim\Http\Request;
 use Slim\Views\Twig;
-
-ini_set('memory_limit', '1000M');
 
 $app = new App([
     'view' => new Twig(INC_ROOT . "/Dev/views/"),
@@ -55,8 +55,13 @@ $app->post("/", function(Request $req, Response $res){
     foreach ($data as $line) {
         array_push($ret, explode(" ",$line, 3));
     }
-    var_dump($data);
+
     return $this->view->render($res, "lookup.twig", array(
         'data' =>$ret
     ));
 })->setName("look.post");
+
+$app->get('/Look/{number}', function ($request, $response, $args) {
+    $action = new LookAction();
+    return $response->$action->withJson( $action->returnData($args["number"]) );
+});

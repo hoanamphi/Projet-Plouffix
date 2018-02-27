@@ -1,5 +1,5 @@
 <?php
-namespace Dev\Actions;
+namespace Dev\Action;
 
 use Dev\Model;
 use Exception;
@@ -31,7 +31,7 @@ class LookAction {
             $data = $this->model->look($num);
             return $data;
         }
-        return "false";
+        return false;
     }
 
     //fonction récursive qui prend en paramètre le tableau sur le quel rechercher, le nombre rechercher, l'index de la première ligne, l'index de la dernière ligne

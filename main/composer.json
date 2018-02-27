@@ -19,5 +19,5 @@
         "slim/flash": "^0.4.0"
 		
     },
-	"autoload": { "psr-4": { "Dev\\": "dev/" }}
+	"autoload": { "psr-4": { "Dev\\": "Dev/" }}
 }

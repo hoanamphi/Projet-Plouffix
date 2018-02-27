@@ -19,15 +19,12 @@ h1 {
     position: relative;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-weight:900;
-    font-size: 6vw;
-    /*letter-spacing: -0.08vw;*/
+    font-size: 6vw;    
     color: #34495E;
 }
 
-form {
-    /*display: block;*/
-    position: relative;
-    /*text-align: center;*/
+form {    
+    position: relative;    
 }
 
 #search {
@@ -64,28 +61,30 @@ select {
     color: white;
 }
 
-.container {	
-	width: auto;
-	background-color: #adf5cc;
-	font-size: 2vh;
-	border: solid 0.5vh #6ade9b;
-	border-radius: 2vh;
-	
+.container > table{
+	width: 100%;
+	background-color: #e1e3e3;
 }
 
-body table tr {
-	
+.container th {
+	background-color: #1abc9c;
+	padding: 2vh 2vw;	
 }
 
-body table tr td {
-/*	padding: 1vh 0.5vw;*/
+.container th:nth-child(1) {
+	border-top-left-radius: 0.75vw;
 }
 
-body table tr td:nth-child(2) {
-/*
-	padding-left: 0.5vw;
-	padding-right: 0.5vw;
-*/
-	border-left: solid #6ade9b;
-	border-right: solid #6ade9b;
+.container th:nth-child(3) {
+	border-top-right-radius: 0.75vw;
+}
+
+.container th:nth-child(2) {
+	border-left: solid 0.10vw #ecf0f1;
+	border-right: solid 0.10vw #ecf0f1;
+}
+
+.container td:nth-child(2n) {
+	border-left: solid 0.10vw #34495E;
+	border-right: solid 0.10vw #34495E;
 }
