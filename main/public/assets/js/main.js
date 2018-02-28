@@ -17,22 +17,22 @@ $(document).ready(function() {
         var num = inputFormatisation(event, $(this).children("#search").val());
         console.log("using fetchJson");
         fetchJSON("Look/"+num).then(function(jsonData){
-
+            makeArray(jsonData);
+            drawArray("body > .container")
         });
         console.log("submit");
     });
 
-    var array = new Array();
     var pageNum = 0;
     var currPage = 0;
-    numDisplay = 20;
+    var numDisplay = 20;
     var displayArray = new Array();
 
     function makeArray(data) {
         for(i =0; i < data.length; i++)
         displayArray.push([data[i][0]], [data[i][1]], [data[i][2]]);
-
-        pageNum = getNumberOfPage();
+        console.log(displayArray);
+        pageNum = displayArray.length/numDisplay;
     }
 
     function addPage(idx) {
@@ -51,10 +51,20 @@ $(document).ready(function() {
         loadPage();
     }
 
-    function loadPage() {
-        for(i  = 0; i < currPage+numDisplay) {
+    function drawArray(elem) {
+        var tab = document.createElement("table");
+        $(elem).append(tab);
 
+        for (var i = currPage; i < currPage+numDisplay*3+1; i++) {
+            var tr = document.createElement("tr");
+            tr.innerHTML += "<td>"+displayArray[i]+"</td>";
+            i++;
+            tr.innerHTML += "<td>"+displayArray[i]+"</td>";
+            i++;
+            tr.innerHTML += "<td>"+displayArray[i]+"</td>";
+            tab.appendChild(tr);
         }
+
     }
 
 });
