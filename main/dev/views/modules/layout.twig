@@ -17,7 +17,8 @@
         {% block scripts %}
             <script rel="script" src="assets/js/jquery-3.2.1.min.js"></script>
             <script rel="script" src="assets/js/jq-flash/flash.js"></script>
-            <script src="assets/fetchJSON-master/fetchJSON.js"></script>
+            <script rel="script" src="assets/fetchJSON-master/fetchJSON.js"></script>
+            <script rel="script" src="assets/js/arrayManager.js";></script>
             <script rel="script" src="assets/js/main.js"></script>
         {% endblock %}
     </head>
@@ -42,20 +43,7 @@
         {% endblock %}
 
         <div class="container">
-            <table>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Table</th>
-                        <th>Signification</th>
-                    </tr>
-                {% for line in data %}
-                    <tr>
-                            <td>{{ line[0] }}</td>
-                            <td>{{ line[1] }}</td>
-                            <td>{{ line[2] }}</td>
-                    </tr>
-                {% endfor %}
-            </table>
+
         </div>
     {% endblock %}
     {% endblock %}
