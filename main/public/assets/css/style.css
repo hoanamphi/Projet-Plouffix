@@ -88,3 +88,11 @@ select {
 	border-left: solid 0.10vw #34495E;
 	border-right: solid 0.10vw #34495E;
 }
+
+.flash-failure{
+    --flash-bg: pink;
+    --flash-textColor: yellow;
+    --flash-boxShadow: unset;
+    --flash-textShadow: 10px 10px #00ff00;
+    --flash-padding: 1vh 0 0 0;
+}

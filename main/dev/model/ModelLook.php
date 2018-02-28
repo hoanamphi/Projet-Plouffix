@@ -1,6 +1,8 @@
 <?php
 namespace Dev\Model;
 
+use Exception;
+
 class ModelLook {
 
     public function findFile($num) {
@@ -13,10 +15,10 @@ class ModelLook {
     public function findResult($num) {
         $path = $this->findFile($num);
         if(file_exists($path)) {
-            $data = file($path) or die("could not open the file");
+            $data = file($path);
             return $data;
         }
-        return false;
+        throw new Exception("File doesn't exist");
     }
 
     public function look($num) {
@@ -25,7 +27,7 @@ class ModelLook {
                 exec("look " . $num . " " . $path, $data);
                 return $data;
             }
-        return false;
+        throw new Exception("File doesn't exist");
     }
 
 }

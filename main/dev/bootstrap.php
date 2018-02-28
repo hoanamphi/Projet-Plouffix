@@ -51,7 +51,12 @@ $app->post("/", function(Request $req, Response $res){
 
 //Récupère les requêtes en GET
 $app->get('/Look/{number}', function ($request, $response, $args) {
-    $action = new LookAction();
+    try {
+        $action = new LookAction();
+    } catch(Exception $e) {
+        echo "Exception : "+$e->getMessage();
+        return $response->withJson($e);
+    }
     $num = $args['number'];
     $data = $action->returnData($num);
     $tmp = array();

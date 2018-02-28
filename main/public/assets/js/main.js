@@ -7,19 +7,27 @@ $(document).ready(function() {
             return num
         } else {
             event.preventDefault();
-            $.flash("Erreur, l'entrée est invalide", "String");
-            return;
+            throw "Entrée non valide";
         }
     }
 
     $(".formNum > form").submit(function (event) {
         event.preventDefault();
-        var num = inputFormatisation(event, $(this).children("#search").val());
+        try {
+            var num = inputFormatisation(event, $(this).children("#search").val());
+        } catch(error) {
+            $.flash(error, "failure");
+            return;
+        }
         console.log("using fetchJson");
         fetchJSON("Look/"+num).then(function(jsonData){
             makeArray(jsonData, 20);
             drawArray("body > .container");
+        }).catch(function (error) {
+            $.flash(error, "failure");
+            return;
         });
+
         console.log("submit");
     });
 
