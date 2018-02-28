@@ -3,7 +3,6 @@ var pageNum = 0;
 var currPage = 0;
 var numDisplay = 0;
 var displayArray;
-var isInt;
 
 function drawArray(elem) {
 
@@ -24,32 +23,19 @@ function loadPage() {
     var head = document.createElement("tr");
     head.innerHTML = "<th>Nombre</th> <th>Table</th> <th>Signification</th>";
     tab.appendChild(head);
-    if((currPage + 1 >= pageNum) &&!isInt){
-        for (var i = 0; i < displayArray.length % numDisplay; i++) {
-            var tr = document.createElement("tr");
-            tr.innerHTML += "<td>"+displayArray[i+(currPage*numDisplay)][0]+"</td>";
-            tr.innerHTML += "<td>"+displayArray[i+(currPage*numDisplay)][1]+"</td>";
-            tr.innerHTML += "<td>"+displayArray[i+(currPage*numDisplay)][2]+"</td>";
-            tab.appendChild(tr);
-        }
-    } else {
-        for (var i = 0; i < numDisplay; i++) {
-            var tr = document.createElement("tr");
-            tr.innerHTML += "<td>"+displayArray[i+(currPage*numDisplay)][0]+"</td>";
-            tr.innerHTML += "<td>"+displayArray[i+(currPage*numDisplay)][1]+"</td>";
-            tr.innerHTML += "<td>"+displayArray[i+(currPage*numDisplay)][2]+"</td>";
-            tab.appendChild(tr);
-        }
-    }
 
-    manageButtons();
+    for (var i = 0; i < numDisplay; i++) {
+        var tr = document.createElement("tr");
+        tr.innerHTML += "<td>"+displayArray[i+(currPage*numDisplay)][0]+"</td>";
+        tr.innerHTML += "<td>"+displayArray[i+(currPage*numDisplay)][1]+"</td>";
+        tr.innerHTML += "<td>"+displayArray[i+(currPage*numDisplay)][2]+"</td>";
+        tab.appendChild(tr);
+    }
 }
 
 function drawNav(elem) {
     next = document.createElement("button");
     prev = document.createElement("button");
-    page = document.createElement("span");
-    pageMax = document.createElement("span");
 
     prev.innerText = "<";
     next.innerText = ">";
@@ -58,8 +44,6 @@ function drawNav(elem) {
     next.addEventListener("click", incPage);
 
     $(elem).append(prev);
-    $(elem).append(page);
-    $(elem).append(pageMax);
     $(elem).append(next);
 }
 
@@ -73,7 +57,6 @@ function makeArray(data, num) {
     numDisplay = num;
 
     pageNum = displayArray.length/numDisplay;
-    isInt = (displayArray.length/numDisplay) % 1 === 0;
 }
 
 function incPage() {
@@ -90,16 +73,4 @@ function decPage() {
         loadPage();
     }
     console.log(currPage);
-}
-
-function manageButtons(){
-    var prev = document.querySelector("button:nth-child(1)");
-    var next = document.querySelector("button:nth-child(4)");
-    var page = document.querySelector("span:nth-child(2)");
-    var pageMax = document.querySelector("span:nth-child(3)");
-
-    prev.disabled = (currPage == 0);
-    next.disabled = (currPage + 1 >= pageNum);
-    page.innerHTML = ""+(currPage+1);
-    pageMax.innerHTML = " / "+Math.ceil(pageNum);
 }

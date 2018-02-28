@@ -12,16 +12,6 @@ class LookAction {
         $this->model = new Model\ModelLook();
     }
 
-    public function inputFormatisation($num){
-            //fait le test pour savoir si la string contient autre chose que des 0.xxx, .xxx ou xxx
-            if (preg_match('/^(\d?(,|\.))?(\d{6,41})$/', $num)) {
-                $num = preg_replace('/0?(\.|,)/','', $num);
-                return $num;
-            } else {
-                return false;
-            }
-    }
-
     public function returnData($num) {
         if ($num != false) {
             $data = $this->model->findResult($num);
@@ -30,7 +20,7 @@ class LookAction {
 //            $data = $this->model->look($num);
             return $data;
         }
-        return false;
+        throw new Exception("Non valid argument");
     }
 
     //fonction récursive qui prend en paramètre le tableau sur le quel rechercher, le nombre rechercher, l'index de la première ligne, l'index de la dernière ligne

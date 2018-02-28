@@ -6,8 +6,7 @@ $(document).ready(function() {
             num = num.replace(/0?(\.|,)/,'');
             return num
         } else {
-            event.preventDefault();
-            throw "Entrée non valide";
+           throw "Entrée non valide";
         }
     }
 
@@ -15,17 +14,18 @@ $(document).ready(function() {
         event.preventDefault();
         try {
             var num = inputFormatisation(event, $(this).children("#search").val());
-        } catch(error) {
+        } catch (error) {
             $.flash(error, "failure");
             return;
         }
         console.log("using fetchJson");
+
         fetchJSON("Look/"+num).then(function(jsonData){
             makeArray(jsonData, 20);
             drawArray("body > .container");
         }).catch(function (error) {
             $.flash(error, "failure");
-            return;
+            return
         });
 
         console.log("submit");
