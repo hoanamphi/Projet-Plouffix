@@ -23,47 +23,66 @@ $(document).ready(function() {
         console.log("submit");
     });
 
+    var tab;
     var pageNum = 0;
     var currPage = 0;
     var numDisplay = 20;
-    var displayArray = new Array();
+    var displayArray;
 
-    function makeArray(data) {
+    function makeArray(data, elem) {
         for(i =0; i < data.length; i++)
-        displayArray.push([data[i][0]], [data[i][1]], [data[i][2]]);
+        displayArray = data;
         console.log(displayArray);
+
         pageNum = displayArray.length/numDisplay;
     }
 
-    function addPage(idx) {
-        if (pageNum += idx < pageNum) {
-            pageNum += idx;
-            currPage += idx;
+    function incPage() {
+        if (currPage + 1 < pageNum) {
+            currPage ++;
         }
-        loadPage();
+        console.log(currPage);
     }
 
-    function decPage(idx) {
-        if (pageNum -= idx > 0) {
-            pageNum -= idx;
-            currPage -= idx;
+    function decPage() {
+        if (currPage - 1 > 0) {
+            currPage --;
         }
-        loadPage();
+        console.log(currPage);
     }
 
     function drawArray(elem) {
-        var tab = document.createElement("table");
-        $(elem).append(tab);
 
-        for (var i = currPage; i < currPage+numDisplay*3+1; i++) {
+        drawNav($(elem).closest("div"));
+
+        tab = document.createElement("table");
+
+        var head = document.createElement("tr");
+        head.innerHTML = "<th>Nombre</th> <th>Table</th> <th>Signification</th>";
+        tab.appendChild(head);
+
+        for (var i = currPage; i < currPage+numDisplay; i++) {
             var tr = document.createElement("tr");
-            tr.innerHTML += "<td>"+displayArray[i]+"</td>";
-            i++;
-            tr.innerHTML += "<td>"+displayArray[i]+"</td>";
-            i++;
-            tr.innerHTML += "<td>"+displayArray[i]+"</td>";
+            tr.innerHTML += "<td>"+displayArray[i][0]+"</td>";
+            tr.innerHTML += "<td>"+displayArray[i][1]+"</td>";
+            tr.innerHTML += "<td>"+displayArray[i][2]+"</td>";
             tab.appendChild(tr);
         }
+        $(elem).append(tab);
+    }
+
+    function drawNav(elem) {
+        next = document.createElement("button");
+        prev = document.createElement("button");
+
+        prev.innerText = "<";
+        next.innerText = ">";
+
+        prev.addEventListener("mousedown", decPage());
+        next.addEventListener("mousedown", incPage());
+
+        $(elem).append(prev);
+        $(elem).append(next);
 
     }
 
