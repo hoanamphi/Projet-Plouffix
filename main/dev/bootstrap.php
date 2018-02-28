@@ -7,7 +7,6 @@ require INC_ROOT.'/vendor/autoload.php';
 
 ini_set('memory_limit', '4095M');
 
-//use Dev\Helpers\TwigExtensions\FlashExtension;
 use Dev\Action\LookAction;
 use Slim\Http\Response;
 use Slim\App;
@@ -22,36 +21,25 @@ $app = new App([
     ]
 ]);
 
-//$container["flash"] = function(){
-//    return new \Slim\Flash\Messages();
-//};
-
-
 $container['view'] = function ($container) {
     $view = new \Slim\Views\Twig(INC_ROOT . '/views');
     $basePath = rtrim(str_ireplace('index.php', '', $container['request']->getUri()->getBasePath()), '/');
     $view->addExtension(new Slim\Views\TwigExtension($container['router'], $basePath));
-//    $view->addExtension(new FlashExtension(
-//        $container->flash
-//    ));
-
     return $view;
 };
 
-
-
+//Affiche la page
 $app->get('/', function(Request $req, Response $res){
-//    $this->flash->addMessage("error", "This is a message");
     return $this->view->render($res, "lookup.twig");
 })->setName("home");
 
+//Récupère les requêtes en POST
 $app->post("/", function(Request $req, Response $res){
     $post = $req->getParsedBody();
     $numParam = $post["num"];
     $action = new LookAction();
     $data = $action->returnData($numParam);
     $ret = array();
-    $line = "";
     foreach ($data as $line) {
         array_push($ret, explode(" ",$line, 3));
     }
@@ -61,7 +49,14 @@ $app->post("/", function(Request $req, Response $res){
     ));
 })->setName("look.post");
 
+//Récupère les requêtes en GET
 $app->get('/Look/{number}', function ($request, $response, $args) {
     $action = new LookAction();
-    return $response->$action->withJson( $action->returnData($args["number"]) );
-});
+    $num = $args['number'];
+    $data = $action->returnData($num);
+    $tmp = array();
+    foreach ($data as $line) {
+        array_push($tmp, explode(" ",$line, 3));
+    }
+    return $response->withJson($tmp);
+})->setName("look.get");

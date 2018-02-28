@@ -17,6 +17,7 @@
         {% block scripts %}
             <script rel="script" src="assets/js/jquery-3.2.1.min.js"></script>
             <script rel="script" src="assets/js/jq-flash/flash.js"></script>
+            <script src="assets/fetchJSON-master/fetchJSON.js"></script>
             <script rel="script" src="assets/js/main.js"></script>
         {% endblock %}
     </head>
@@ -40,8 +41,7 @@
 
         {% endblock %}
 
-        {% if data != null %}
-            <div class="container">
+        <div class="container">
             <table>
                     <tr>
                         <th>Nombre</th>
@@ -56,8 +56,7 @@
                     </tr>
                 {% endfor %}
             </table>
-            </div>
-        {% endif %}
+        </div>
     {% endblock %}
     {% endblock %}
     </body>

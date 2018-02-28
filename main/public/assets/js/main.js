@@ -13,13 +13,48 @@ $(document).ready(function() {
     }
 
     $(".formNum > form").submit(function (event) {
+        event.preventDefault();
         var num = inputFormatisation(event, $(this).children("#search").val());
-        $.ajax({
-            url: "/Look/"+num,
-            type: "GET",
-            success: function (rawdata) {
-                console.log(rawdata);
-            }
+        console.log("using fetchJson");
+        fetchJSON("Look/"+num).then(function(jsonData){
+
         });
+        console.log("submit");
     });
+
+    var array = new Array();
+    var pageNum = 0;
+    var currPage = 0;
+    numDisplay = 20;
+    var displayArray = new Array();
+
+    function makeArray(data) {
+        for(i =0; i < data.length; i++)
+        displayArray.push([data[i][0]], [data[i][1]], [data[i][2]]);
+
+        pageNum = getNumberOfPage();
+    }
+
+    function addPage(idx) {
+        if (pageNum += idx < pageNum) {
+            pageNum += idx;
+            currPage += idx;
+        }
+        loadPage();
+    }
+
+    function decPage(idx) {
+        if (pageNum -= idx > 0) {
+            pageNum -= idx;
+            currPage -= idx;
+        }
+        loadPage();
+    }
+
+    function loadPage() {
+        for(i  = 0; i < currPage+numDisplay) {
+
+        }
+    }
+
 });
