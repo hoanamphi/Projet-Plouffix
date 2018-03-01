@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    console.log("ready");
+
     function inputFormatisation(event, num) {
         var reGex = /^(\d?(,|\.))?(\d{6,41})$/;
         if (reGex.exec(num)) {
@@ -18,17 +18,19 @@ $(document).ready(function() {
             $.flash(error, "failure");
             return;
         }
-        console.log("using fetchJson");
 
         fetchJSON("Look/"+num).then(function(jsonData){
+            if(jsonData['error']) {
+                $.flash(jsonData['error']['msg'], "failure");
+                return;
+            }
             makeArray(jsonData, 20);
             drawArray("body > .container");
         }).catch(function (error) {
             $.flash(error, "failure");
-            return
+            return;
         });
 
-        console.log("submit");
     });
 
 });

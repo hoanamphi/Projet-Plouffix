@@ -24,27 +24,46 @@ function loadPage() {
     head.innerHTML = "<th>Nombre</th> <th>Table</th> <th>Signification</th>";
     tab.appendChild(head);
 
-    for (var i = 0; i < numDisplay; i++) {
-        var tr = document.createElement("tr");
-        tr.innerHTML += "<td>"+displayArray[i+(currPage*numDisplay)][0]+"</td>";
-        tr.innerHTML += "<td>"+displayArray[i+(currPage*numDisplay)][1]+"</td>";
-        tr.innerHTML += "<td>"+displayArray[i+(currPage*numDisplay)][2]+"</td>";
-        tab.appendChild(tr);
+    if ((currPage + 1 >= pageNum) && !(displayArray.length / numDisplay) % 1 === 0) {
+        for (var i = 0; i < displayArray.length % numDisplay; i++) {
+            var tr = document.createElement("tr");
+            tr.innerHTML += "<td>" + displayArray[i + (currPage * numDisplay)][0] + "</td>";
+            tr.innerHTML += "<td>" + displayArray[i + (currPage * numDisplay)][1] + "</td>";
+            tr.innerHTML += "<td>" + displayArray[i + (currPage * numDisplay)][2] + "</td>";
+            tab.appendChild(tr);
+        }
+    } else {
+        for (var i = 0; i < numDisplay; i++) {
+            var tr = document.createElement("tr");
+            tr.innerHTML += "<td>" + displayArray[i + (currPage * numDisplay)][0] + "</td>";
+            tr.innerHTML += "<td>" + displayArray[i + (currPage * numDisplay)][1] + "</td>";
+            tr.innerHTML += "<td>" + displayArray[i + (currPage * numDisplay)][2] + "</td>";
+            tab.appendChild(tr);
+        }
     }
+    manageButtons();
 }
 
 function drawNav(elem) {
+    div = document.createElement("div");
     next = document.createElement("button");
+    page = document.createElement("span");
+    pageMax = document.createElement("span");
     prev = document.createElement("button");
 
+    div.className = "nav";
     prev.innerText = "<";
     next.innerText = ">";
 
     prev.addEventListener("click", decPage);
     next.addEventListener("click", incPage);
 
-    $(elem).append(prev);
-    $(elem).append(next);
+    div.append(prev);
+    div.append(page);
+    div.append(pageMax);
+    div.appendChild(next);
+
+    $(elem).append(div);
 }
 
 function makeArray(data, num) {
@@ -73,4 +92,15 @@ function decPage() {
         loadPage();
     }
     console.log(currPage);
+}
+
+function manageButtons(){
+    var prev = document.querySelector("button:nth-child(1)");
+    var nav = $(".nav").children();
+
+    nav.eq(0).prop('disabled', currPage === 0);
+    nav.eq(1).text(currPage+1);
+    nav.eq(2).text("/" +Math.ceil(pageNum));
+    nav.eq(3).prop('disabled', currPage + 1 >= pageNum);
+
 }
