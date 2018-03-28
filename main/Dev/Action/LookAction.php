@@ -14,10 +14,13 @@ class LookAction {
 
     public function returnData($num) {
         if ($num != false) {
-//            $data = $this->model->findResult($num);
-//            $higIndex = count($data)-1;
-//            $data = $this->binary_search($data, $num, 0, $higIndex, 0);
-            $data = $this->model->look($num);
+            $data = $this->model->findResult($num);
+            $higIndex = count($data)-1;
+            $data = $this->binary_search($data, $num, 0, $higIndex, 0);
+//            $data = $this->model->look($num);
+            if(empty($data)) {
+                throw new Exception("Can't find reference (but file exist)");
+            }
             return $data;
         }
         throw new Exception("Non valid argument");

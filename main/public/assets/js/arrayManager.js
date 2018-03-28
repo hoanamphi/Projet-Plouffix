@@ -1,8 +1,13 @@
-var tab;
 var pageNum = 0;
 var currPage = 0;
 var numDisplay = 0;
 var displayArray;
+var url;
+var tr;
+var tab;
+var tdNum;
+var tdTab;
+var tdDef;
 
 function drawArray(elem) {
 
@@ -21,23 +26,53 @@ function loadPage() {
     $(tab).empty();
 
     var head = document.createElement("tr");
-    head.innerHTML = "<th>Nombre</th> <th>Table</th> <th>Signification</th>";
+    head.innerHTML = "<th>Number</th> <th>Table</th> <th>Signification</th>";
     tab.appendChild(head);
 
     if ((currPage + 1 >= pageNum) && !(displayArray.length / numDisplay) % 1 === 0) {
         for (var i = 0; i < displayArray.length % numDisplay; i++) {
-            var tr = document.createElement("tr");
-            tr.innerHTML += "<td>" + displayArray[i + (currPage * numDisplay)][0] + "</td>";
-            tr.innerHTML += "<td>" + displayArray[i + (currPage * numDisplay)][1] + "</td>";
-            tr.innerHTML += "<td>" + displayArray[i + (currPage * numDisplay)][2] + "</td>";
+            tr = document.createElement("tr");
+
+            tdNum = document.createElement("td");
+            tdTab = document.createElement("td");
+            tdDef = document.createElement("td");
+
+            tdNum.innerText  = displayArray[i + (currPage * numDisplay)][0];
+
+            url = document.createElement("a");
+            url.setAttribute("href", "http://oeis.org/search?q=" + displayArray[i + (currPage * numDisplay)][1]);
+            url.innerText = displayArray[i + (currPage * numDisplay)][1];
+            tdTab.append(url);
+
+            tdDef.innerText = displayArray[i + (currPage * numDisplay)][2];
+
+            tr.append(tdNum);
+            tr.append(tdTab);
+            tr.append(tdDef);
+
             tab.appendChild(tr);
         }
     } else {
         for (var i = 0; i < numDisplay; i++) {
-            var tr = document.createElement("tr");
-            tr.innerHTML += "<td>" + displayArray[i + (currPage * numDisplay)][0] + "</td>";
-            tr.innerHTML += "<td>" + displayArray[i + (currPage * numDisplay)][1] + "</td>";
-            tr.innerHTML += "<td>" + displayArray[i + (currPage * numDisplay)][2] + "</td>";
+            tr = document.createElement("tr");
+
+            tdNum = document.createElement("td");
+            tdTab = document.createElement("td");
+            tdDef = document.createElement("td");
+
+            tdNum.innerText  = displayArray[i + (currPage * numDisplay)][0];
+
+            url = document.createElement("a");
+            url.setAttribute("href", "http://oeis.org/search?q=" + displayArray[i + (currPage * numDisplay)][1]);
+            url.innerText = displayArray[i + (currPage * numDisplay)][1];
+            tdTab.append(url);
+
+            tdDef.innerText = displayArray[i + (currPage * numDisplay)][2];
+
+            tr.append(tdNum);
+            tr.append(tdTab);
+            tr.append(tdDef);
+
             tab.appendChild(tr);
         }
     }
@@ -47,15 +82,21 @@ function loadPage() {
 function drawNav(elem) {
     div = document.createElement("div");
     next = document.createElement("button");
-    page = document.createElement("span");
+    page = document.createElement("input");
     pageMax = document.createElement("span");
     prev = document.createElement("button");
 
     div.className = "nav";
     prev.innerText = "<";
+    page.setAttribute("type", "number");
     next.innerText = ">";
 
     prev.addEventListener("click", decPage);
+    page.addEventListener("keydown", function (event) {
+        if(event.keyCode === 13) {
+            goToPage($(page).val());
+        }
+    });
     next.addEventListener("click", incPage);
 
     div.append(prev);
@@ -67,9 +108,7 @@ function drawNav(elem) {
 }
 
 function makeArray(data, num) {
-    for(i =0; i < data.length; i++)
-        displayArray = data;
-    console.log(displayArray);
+    displayArray = data;
 
     pageNum = 0;
     currPage = 0;
@@ -83,7 +122,6 @@ function incPage() {
         currPage += 1;
         loadPage();
     }
-    console.log(currPage);
 }
 
 function decPage() {
@@ -91,15 +129,22 @@ function decPage() {
         currPage--;
         loadPage();
     }
-    console.log(currPage);
+}
+
+function goToPage(idx) {
+    if (idx > 0 && idx <= Math.ceil(pageNum)) {
+        currPage = idx-1;
+        loadPage();
+    } else {
+        $.flash("No more values", "failure");
+    }
 }
 
 function manageButtons(){
-    var prev = document.querySelector("button:nth-child(1)");
     var nav = $(".nav").children();
 
     nav.eq(0).prop('disabled', currPage === 0);
-    nav.eq(1).text(currPage+1);
+    nav.eq(1).val(currPage+1);
     nav.eq(2).text("/" +Math.ceil(pageNum));
     nav.eq(3).prop('disabled', currPage + 1 >= pageNum);
 

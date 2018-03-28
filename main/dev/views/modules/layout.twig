@@ -17,7 +17,6 @@
         {% block scripts %}
             <script rel="script" src="assets/js/jquery-3.2.1.min.js"></script>
             <script rel="script" src="assets/js/jq-flash/flash.js"></script>
-            <script rel="script" src="assets/fetchJSON-master/fetchJSON.js"></script>
             <script rel="script" src="assets/js/arrayManager.js";></script>
             <script rel="script" src="assets/js/main.js"></script>
         {% endblock %}
@@ -26,18 +25,14 @@
     {%  block body %}
     <body>
     {% block dataDisplay %}
-
+        <div class="loader"></div>
         {% block numberForm %}
-
             <div class="formNum">
                 <form action="" method="POST">
-                    <input id="search" name="num" placeholder="Your number (6 decimals)" class="form" type="text">
-                    <select name="type">
-                        <option value="classic" selected>Classic</option>
-                        <option value="smart" selected>Smart</option>
-                    </select>
+                    <input class="search" name="num" placeholder="Your number (6 decimals)" type="text">
                     <input type="submit" value="submit" class="submit">
                 </form>
+                <a class="help" href="help" >HELP</a>
             </div>
 
         {% endblock %}

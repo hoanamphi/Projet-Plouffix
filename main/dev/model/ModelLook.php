@@ -8,7 +8,7 @@ class ModelLook {
     public function findFile($num) {
         //Modifier la partie gauuche du chemin vers la zone contenant les fichiers
         // ici, la partie droite avec les num étant faite our trouver le fichier a0000.txt
-        $path =  "../../../ip/".$num[0]."/a".$num[0].$num[1].$num[2].$num[3].'.txt';
+        $path =  "../../../ip/".$num[0]."/a".$num[0].$num[1].$num[2].$num[3];
 //        $path =  "../Dev/Model/".$num[0]."/a".$num[0].$num[1].$num[2].$num[3].'.txt';
         return $path;
     }
@@ -19,16 +19,16 @@ class ModelLook {
             $data = file($path);
             return $data;
         }
-        throw new Exception("Reference doesn't exist");
+        throw new Exception("File or reference doesn't exist");
     }
 
     public function look($num) {
         $path = $this->findFile($num);
             if(file_exists($path)) {
-                exec("look " . $num . " " . $path, $data);
+                exec("look " . $num . " " . $path . "| head -200", $data);
                 return $data;
             }
-        throw new Exception("Reference doesn't exist");
+        throw new Exception("File or reference doesn't exist");
     }
 
 }
